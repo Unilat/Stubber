@@ -79,7 +79,6 @@
                 case 'stubs': {
                     // stubs message sent from panel when state of stubs has changed
                     // content script loads original stubs from chrome.storage.local
-                    cachedStubs = message.stubs;
                     // don't send anything if Stubber isn't engaged
                     if (engaged) chrome.tabs.sendMessage(message.tabId, message, function(response) {});
                 }

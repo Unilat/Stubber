@@ -61,7 +61,8 @@ backgroundPageConnection.onMessage.addListener(function (message) {
             break;
         // the inspected page got the context script injected
         case 'injectComplete':
-            resetLog();
+            // TODO: this used to reset the log when script got injected (like if page refreshed or changed)
+            // but idk if that's actually useful or not.
             break;
     }
 });
