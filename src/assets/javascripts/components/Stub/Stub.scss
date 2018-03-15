@@ -1,0 +1,213 @@
+.stub {
+    transition: 0.15s;
+    height: 70px;
+    position: relative;
+    //border-bottom: 1px solid #cedbe2;
+
+    &:hover {
+        .stub__content {
+            margin-right: 195px;
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 1;
+    }
+
+    &:last-child {
+        .stub-wrapper {
+            padding: 10px 0 5px 0;
+        }
+
+        &:before {
+            border-radius: 0 0 3px 3px;
+        }
+    }
+}
+    .stub-wrapper {
+        display: flex;
+        position: relative;
+        padding: 10px 0;
+        background-color: #fff;
+        width: 100%;
+        z-index: 2;
+
+        &.dragging {
+            position: fixed;
+            top: 0;
+            left: 10px;
+            right: 10px;
+            z-index: 1000;
+            opacity: 0.5;
+            width: auto;
+
+            &, .stub__method {
+                cursor: -webkit-grabbing;
+            }
+        }
+    }
+
+    .stub-placer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #277cca;
+        z-index: 100;
+    }
+
+    .stub .actions {
+        right: 0;
+    }
+
+    .stub__method {
+        width: 105px;
+        letter-spacing: 1px;
+        flex-shrink: 0;
+        padding: 0 15px;
+        user-select: none;
+        font-family: 'Roboto Mono', monospace;
+
+        &:hover {
+            cursor: -webkit-grab;
+        }
+        
+        span {
+            display: inline-block;
+            border-radius: 3px;
+            border: 1px solid;
+            line-height: 28px;
+            height: 30px;
+            margin: 10px 0;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+    }
+        .stub__method--GET span {
+            border-color: #11c453;
+            color: #11c453;
+        }
+        .stub__method--POST span {
+            border-color: orange;
+            color: orange;
+        }
+        .stub__method--PUT span {
+            border-color: blue;
+            color: blue;
+        }
+        .stub__method--PATCH span {
+            border-color: teal;
+            color: teal;
+        }
+        .stub__method--DELETE span {
+            border-color: #ea073c;
+            color: #ea073c;
+        }
+
+        .stub__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+            .stub__name {
+                margin-bottom: 6px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            .stub__url {
+                font-family: 'Roboto Mono', monospace;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 11px;
+                color: #666;
+                width: 100%;
+                line-height: 15px;
+            }
+
+.stub.disabled {
+    &:last-child:after {
+        background-color: #f9fbfc;
+    }
+
+    .stub-wrapper {
+        background-color: #f9fbfc;
+    }
+
+    .stub__method span {
+        border-color: #aaa;
+        color: #aaa;
+    }
+
+    .stub__name {
+        color: #666;
+    }
+
+    .stub__name:after {
+        content: '(disabled)';
+        font-size: 11px;
+        margin-left: 10px;
+        color: #aaa;
+    }
+
+    .stub__url {
+        color: #aaa;
+    }
+}
+
+.dark {
+    .stub {
+        //border-bottom: 1px solid #12191d;
+        &:before {
+            background-color: #3e484e;
+        }
+    }
+    .stub-wrapper {
+        background-color: #3e484e;
+    }
+    .disabled {
+        .stub-wrapper, &.stub:last-child:after, &.stub:before {
+            background-color: #353c42;
+        }
+        .stub__method span {
+            border-color: #646f84;
+            color: #646f84;
+        }
+    }
+    
+        .stub__name {
+            margin-bottom: 6px;
+            color: #deefff;
+        }
+        .disabled .stub__name {
+            color: #8da1b7;
+        }
+        
+        .stub__url {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 12px;
+            color: #82909c;
+            width: 100%;
+            line-height: 15px;
+        }
+        .disabled .stub__url {
+            color: #64707b;
+        }
+        .disabled .stub__name:after {
+            color: #64707b;
+        }
+}

@@ -1,0 +1,109 @@
+.stubform {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+    .stubform__bottom {
+        flex: 1;
+        position: relative;
+        min-height: 170px;
+    }
+
+        .url-bar {
+            position: relative;
+
+            .select {
+                width: 100px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                background: none !important;
+
+                select {
+                    &:not(:focus) {
+                        border-color: transparent !important;
+                    }
+                }
+            }
+
+            .textbox input {
+                width: 100%;
+                padding: 0 15px 0 110px;
+            }
+        }
+
+        .status-input {
+            width: 100px;
+        }
+
+        .tab-list {
+            display: flex;
+            position: relative;
+            z-index: 2;
+            //border: 1px solid #cad7e4;
+            border-radius: 3px;
+            float: left;
+            overflow: hidden;
+
+            label {
+                background-color: #eaf0f7;
+                height: 38px;
+                line-height: 38px;
+                padding: 0 20px;
+                margin: 0;
+                color: #888;
+                cursor: pointer;
+
+                &.selected {
+                    background-color: #fff;
+                    color: #333;
+                    cursor: default;
+                }
+            }
+        }
+
+        .tabs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+            .tab {
+                height: 100%;
+
+                .textbox {
+                    height: 100%;
+
+                    textarea {
+                        height: 100%;
+                    }
+                }
+            }
+
+.toolbar {
+    margin-top: 20px;
+}
+
+.dark {
+    .tab-list {
+        //border: 1px solid #3e484e;
+
+        label {
+            background-color: #1c2429;
+            color: #646f84;
+
+            &.selected {
+                background-color: #5c6a73;
+                color: #deefff;
+            }
+        }
+    }
+
+    .url-bar select {
+        background-color: transparent !important;
+    }
+}

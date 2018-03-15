@@ -1,0 +1,43 @@
+{
+    "name": "Stubber",
+    "version": "1.0",
+    "description": "Stubs endpoints",
+    "minimum_chrome_version": "10.0",
+    "devtools_page": "devtools.html",
+    "manifest_version": 2,
+    "permissions": [
+        "tabs",
+        "storage",
+        "webNavigation",
+        "<all_urls>"
+    ],
+
+    "content_scripts": [{
+        "js":        [ "content.js" ],
+        "matches":   [ "<all_urls>" ],
+        "run_at":    "document_start"
+    }],
+
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+
+    "icons": {
+        "16": "images/stubber16.png",
+        "48": "images/stubber48.png",
+        "128": "images/stubber128.png",
+        "256": "images/stubber256.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "16": "images/stubber16-off.png",
+            "48": "images/stubber48-off.png",
+            "128": "images/stubber128-off.png",
+            "256": "images/stubber256-off.png"
+        },
+        "default_title": "Stubber OFF"
+    }
+}

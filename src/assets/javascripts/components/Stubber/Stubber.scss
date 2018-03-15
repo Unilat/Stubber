@@ -1,0 +1,76 @@
+.stubber {
+    min-height: 80px;
+    overflow: hidden;
+}
+
+header {
+    padding: 5px 0;
+    //background-color: #d1dbe4;
+    color: #277cca;
+    position: relative;
+    //border-bottom: 1px solid #adb5bb;
+    z-index: 1;
+
+    &:hover {
+        z-index: 3;
+    }
+
+    span {
+        letter-spacing: 1px;
+        line-height: 45px;
+        display: inline-block;
+    }
+
+    .actions {
+        opacity: 1;
+        transform: none;
+        right: 0;
+
+        button:after {
+            background-color: #deefff;
+        }
+    }
+}
+    .logo {
+        background-color: #277cca;
+        -webkit-mask-image: url(../../../images/stub.svg);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: 21px 21px;
+        width: 40px;
+        height: 40px;
+        float: left;
+    }
+
+.folder-list {
+    &--empty {
+        height: calc(100vh - 55px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            color: #deefff;
+        }
+    }
+}
+
+.dark {
+    header {
+        //background-color: #1c1e21;
+        color: #deefff;
+        //border-bottom: 1px solid #000000;
+
+        .actions button {
+            &:after {
+                background-color: #deefff;
+            }
+            &:hover:after {
+                background-color: #fff;
+            }
+        }
+    }
+        .logo {
+            background-color: #deefff;
+        }
+}

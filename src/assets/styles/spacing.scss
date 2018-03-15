@@ -1,0 +1,36 @@
+$spacing-xs: 10px;
+$spacing-sm: 20px;
+$spacing-md: 40px;
+$spacing-lg: 80px;
+$spacing-xl: 160px;
+$spacing-xxl: 250px;
+
+$sizings: "--xs" "--sm" "--md" "--lg" "--xl" "--xxl" "--none";
+$sizes: $spacing-xs $spacing-sm $spacing-md $spacing-lg $spacing-xl $spacing-xxl 0;
+
+//
+// Padding + Margins
+//
+
+@for $i from 1 through length($sizes) {
+    $sizing: nth($sizings, $i);
+    $size: nth($sizes, $i);
+
+    .padding#{$sizing}            { padding: $size !important; }
+    .padding-sides#{$sizing}      { padding-left: $size !important; padding-right: $size !important; }
+    .padding-bun#{$sizing}        { padding-top: $size !important; padding-bottom: $size !important; }
+
+    .padding-top#{$sizing}        { padding-top: $size !important; }
+    .padding-right#{$sizing}      { padding-right: $size !important; }
+    .padding-bottom#{$sizing}     { padding-bottom: $size !important; }
+    .padding-left#{$sizing}       { padding-left: $size !important; }
+
+    .margin#{$sizing}            { margin: $size !important; }
+    .margin-sides#{$sizing}      { margin-left: $size !important; margin-right: $size !important; }
+    .margin-bun#{$sizing}        { margin-top: $size !important; margin-bottom: $size !important; }
+
+    .margin-top#{$sizing}        { margin-top: $size !important; }
+    .margin-right#{$sizing}      { margin-right: $size !important; }
+    .margin-bottom#{$sizing}     { margin-bottom: $size !important; }
+    .margin-left#{$sizing}       { margin-left: $size !important; }
+}

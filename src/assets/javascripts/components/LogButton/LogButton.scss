@@ -1,0 +1,73 @@
+.log {
+    margin: 15px 10px;
+    font-size: 12px;
+}
+
+.log-item {
+    font-family: 'Roboto Mono', monospace;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: transparent;
+
+    &:nth-child(2n+1) {
+        background-color: #eaeff3;
+    }
+
+    &:hover:not(.log-item--stubbed) {
+        cursor: pointer;
+        background-color: #bfc8da;
+    }
+
+    td {
+        padding: 8px 10px;
+    }
+}
+
+    .log-item__url {
+        width: 100%;
+    }
+
+    .log-item__status {
+        min-width: 65px;
+
+        &--success {
+            color: #11c453;
+        }
+        &--redirect {
+            color: #dbab00;
+        }
+        &--error {
+            color: #ea073c;
+        }
+        &--pending {
+            color: #aaa;
+        }
+    }
+
+    .log-item__stub {
+        height: 14px;
+        width: 14px;
+        -webkit-mask-image: url(../../../images/stub.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-size: 14px 14px;
+        background-color: #333;
+        margin-left: 5px;
+        float: right;
+    }
+
+.dark {
+    .log {
+        color: #deefff;
+    }
+        .log-item {
+            &:nth-child(2n+1) {
+                background-color: #263138;
+            }
+            &:hover:not(.log-item--stubbed) {
+                background-color: #4b5963;
+            }
+        }
+            .log-item__stub {
+                background-color: #deefff;
+            }
+}

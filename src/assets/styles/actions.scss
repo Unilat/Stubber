@@ -1,0 +1,95 @@
+.actions {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    height: 100%;
+    padding: 0 10px;
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    transition: 0.2s ease-out;
+    display: flex;
+    align-items: center;
+
+    button {
+        width: 41px;
+        height: 41px;
+        appearance: none;
+        margin: 0;
+        position: relative;
+        background-color: transparent;
+        cursor: pointer;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            -webkit-mask-size: 21px 21px;
+        }
+    }
+}
+.folder:not(.folder--editing) .folder__header:hover .actions, .stub:hover .actions {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.close:after {
+    -webkit-mask-image: url(../images/close.svg);
+}
+.clear-log:after {
+    -webkit-mask-image: url(../images/trash.svg);
+}
+.close:hover:after, .clear-log:hover:after {
+    background-color: #ea073c;
+}
+.add-stub:after {
+    -webkit-mask-image: url(../images/add-stub.svg);
+}
+.add-stub:hover:after, .add-folder:hover:after, .duplicate:hover:after {
+    background-color: #11c453;
+}
+.add-folder:after {
+    -webkit-mask-image: url(../images/add-folder.svg);
+}
+.duplicate:after {
+    -webkit-mask-image: url(../images/duplicate.svg);
+}
+.import:after {
+    -webkit-mask-image: url(../images/import.svg);
+}
+.export:after {
+    -webkit-mask-image: url(../images/export.svg);
+}
+.log:after {
+    -webkit-mask-image: url(../images/log.svg);
+}
+.log i {
+    margin-left: -20px;
+}
+.log i:before {
+    margin-left: 15px !important;
+}
+.edit:after {
+    -webkit-mask-image: url(../images/edit.svg);
+}
+.edit:hover:after, .disable:hover:after, .import:hover:after, .export:hover:after {
+    background-color: #277cca;
+}
+.disable:after {
+    -webkit-mask-image: url(../images/disable.svg);
+}
+
+.dark .actions button {
+    &:after {
+        background-color: #8da1b7;
+    }
+
+    &:hover:after {
+        background-color: #deefff;
+    }
+}

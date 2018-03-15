@@ -1,0 +1,64 @@
+button {
+    /* i is for "info" */
+    i {
+        display: block;
+        position: absolute;
+        background-color: #222;
+        color: #fff;
+        padding: 5px 10px;
+        bottom: 100%;
+        left: 9999px;
+        line-height: 1em;
+        font-size: 10px;
+        font-weight: 300;
+        border-radius: 3px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.25s ease-out;
+
+        &:before {
+            content: '';
+            position: absolute;
+            border: 5px solid #222;
+            border-color: #222 transparent transparent transparent;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+        }
+
+        &.bottom {
+            top: 100%;
+            bottom: auto;
+
+            &:before {
+                bottom: 100%;
+                top: auto;
+                border-top-color: transparent;
+                border-bottom-color: #222;
+            }
+        }
+    }
+
+    &:hover {
+        i {
+            opacity: 1;
+            left: 50%;
+        }
+    }
+}
+
+.dark .actions {
+    button i {
+        background-color: #fff;
+        color: #222;
+    
+        &:before {
+            border-color: #fff transparent transparent transparent;
+        }
+        
+        &.bottom:before {
+            border-top-color: transparent;
+            border-bottom-color: #fff;
+        }
+    }
+}
