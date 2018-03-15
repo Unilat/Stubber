@@ -7,7 +7,7 @@ Chrome extension for stubbing endpoints in-browser.
 ### Installation
 
 ```sh
-$ git clone https://github.nwie.nete/Nationwide/Stubber.git
+$ git clone https://github.nwie.net/Nationwide/Stubber.git
 $ cd Stubber
 $ npm install
 ```
