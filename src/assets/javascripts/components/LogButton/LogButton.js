@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -104,6 +104,7 @@ function shortenURL(url) {
 }
 
 export default connect(
+    // eslint-disable-next-line no-unused-vars
     state => createSelector(
         state => state.logs,
         logs => ({ logs: logs.byID.map(id => logs.byHash[id]) })

@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { createSelector } from 'reselect';
 import { stubActions } from '../../reducers/stubs';
 import { moveStub } from '../../reducers/folders';
-import Modal from '../Modal';
 import Form from '../Forms/Form';
 import Textbox from '../Forms/Textbox';
 import Select from '../Forms/Select';

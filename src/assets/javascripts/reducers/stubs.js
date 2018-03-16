@@ -58,7 +58,7 @@ export default function stubs(state = {}, action = {}) {
                 stubs[id] = {
                     ...stubs[id],
                     disabled: action.disabled
-                }
+                };
             });
 
             return stubs;

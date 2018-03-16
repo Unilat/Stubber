@@ -1,5 +1,4 @@
 import { ADD_STUB, REMOVE_STUB } from './stubs';
-import { createSelector } from 'reselect';
 import { IMPORT } from '../app/reducer';
 
 export const ADD_FOLDER = 'ADD_FOLDER';
@@ -47,7 +46,7 @@ export default function folders(state = { byID: [], byHash: {}, editing: null },
                     ...state.byHash[action.id],
                     name: action.name
                 }
-            }
+            };
 
             return { ...state, byHash, editing: null };
         }
@@ -60,7 +59,7 @@ export default function folders(state = { byID: [], byHash: {}, editing: null },
                     ...folder,
                     open: !folder.open
                 }
-            }
+            };
 
             return { ...state, byHash };
         }
@@ -74,7 +73,7 @@ export default function folders(state = { byID: [], byHash: {}, editing: null },
                     ...folder,
                     stubs: folder.stubs.concat(action.stub.id)
                 }
-            }
+            };
 
             return { ...state, byHash };
         }
@@ -86,7 +85,6 @@ export default function folders(state = { byID: [], byHash: {}, editing: null },
             if (currentPosition === position || currentPosition + 1 === position) {
                 return state;
             } else {
-                
                 const byID = state.byID.slice(0);
                 byID.splice(currentPosition, 1);
                 byID.splice(position > currentPosition ? position - 1 : position, 0, action.id);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Spinner.scss';
@@ -21,7 +21,7 @@ export default class Spinner extends Component {
         if (!nextProps.open && this.props.open) {
             setTimeout(() => this.setState({ animationComplete: true }), 200);
         } else if (nextProps.open && !this.props.open) {
-            this.setState({ animationComplete: false })
+            this.setState({ animationComplete: false });
         }
     }
     

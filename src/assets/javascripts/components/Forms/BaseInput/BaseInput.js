@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export default class BaseInput extends Component {
     constructor(props, context) {

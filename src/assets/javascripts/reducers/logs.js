@@ -30,7 +30,7 @@ export default function logs(state = initialState, action = {}) {
                         ...action.response
                     }
                 }
-            }
+            };
         }
 
         case CLEAR_LOG: {

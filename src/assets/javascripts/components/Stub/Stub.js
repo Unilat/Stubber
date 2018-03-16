@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -108,7 +108,6 @@ class Stub extends Component {
         const { startY, offsetY, positions, placer, wrapper } = this;
 
         let diffY = e.clientY - startY + offsetY;
-        let insert = 0;
         const previousPlacement = this.lastPlacement;
 
         if (diffY > positions[0].y) {
@@ -135,8 +134,8 @@ class Stub extends Component {
         });
     }
 
-    mouseUp(e) {
-        const { startY, offsetY, lastPlacement, positions, placer, wrapper, rAF } = this;
+    mouseUp() {
+        const { lastPlacement, positions, placer, wrapper, rAF } = this;
 
         cancelAnimationFrame(rAF);
 

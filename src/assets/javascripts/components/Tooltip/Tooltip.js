@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import './Tooltip.scss';
@@ -33,7 +33,7 @@ export default class Tooltip extends PureComponent {
     
     render() {
         return (
-            <i className={this.props.bottom ? "bottom" : ''} ref={(tt) => { this.elem = tt; }}>{this.props.text}</i>
+            <i className={this.props.bottom ? 'bottom' : ''} ref={(tt) => { this.elem = tt; }}>{this.props.text}</i>
         );
     }
 }

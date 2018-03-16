@@ -1,7 +1,7 @@
 (function() {
 
     // listen for messages from background.js and relay them to the context script
-    chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+    chrome.extension.onMessage.addListener(function(message) {
         switch (message.name) {
             case 'stubs':
                 sendStubs(message.stubs);

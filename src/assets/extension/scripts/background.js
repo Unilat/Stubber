@@ -13,7 +13,7 @@
     // promisify local storage getting whether stubber is on or off.
     // this way we can delay responding to page initial injections with
     // empty stubs when the browser boots for the first time
-    let engagedPromise = new Promise((resolve, reject) => {
+    let engagedPromise = new Promise((resolve) => {
         chrome.storage.local.get(items => {
             // set our internal value
             engaged = items['stubber-engaged'] || false;
@@ -33,7 +33,7 @@
         });
     }
 
-    chrome.browserAction.onClicked.addListener(function (tab) {
+    chrome.browserAction.onClicked.addListener(function() {
         engaged = !engaged;
         updateBrowserAction();
 
@@ -44,11 +44,11 @@
             if (engaged) {
                 // send whatever stubs we received last
                 chrome.storage.local.get('stubs', ({ stubs }) => 
-                    chrome.tabs.sendMessage(tabId, { name: 'stubs', stubs }, function(response) {})
+                    chrome.tabs.sendMessage(tabId, { name: 'stubs', stubs }, function() {})
                 );
             } else {
                 // clear out stubs
-                chrome.tabs.sendMessage(tabId, { name: 'stubs', stubs: [] }, function(response) {});
+                chrome.tabs.sendMessage(tabId, { name: 'stubs', stubs: [] }, function() {});
             }
         });
     });
@@ -66,7 +66,7 @@
 
     chrome.runtime.onConnect.addListener(function(port) {
 
-        var extensionListener = function(message, sender, sendResponse) {
+        var extensionListener = function(message) {
 
             // The original connection event doesn't include the tab ID of the
             // DevTools page, so we need to send it explicitly.
@@ -80,13 +80,13 @@
                     // stubs message sent from panel when state of stubs has changed
                     // content script loads original stubs from chrome.storage.local
                     // don't send anything if Stubber isn't engaged
-                    if (engaged) chrome.tabs.sendMessage(message.tabId, message, function(response) {});
+                    if (engaged) chrome.tabs.sendMessage(message.tabId, message, function() {});
                 }
             }
 
             // other message handling
             console.log(message);
-        }
+        };
 
         // Listen to messages sent from the DevTools page
         port.onMessage.addListener(extensionListener);
@@ -97,7 +97,7 @@
             var tabs = Object.keys(connections);
             for (var i = 0, len = tabs.length; i < len; i++) {
                 if (connections[tabs[i]] == port) {
-                    delete connections[tabs[i]]
+                    delete connections[tabs[i]];
                     break;
                 }
             }
@@ -106,7 +106,7 @@
 
     // Receive message from content script and relay to the devTools page for the
     // current tab
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    chrome.runtime.onMessage.addListener(function(request, sender) {
         // Messages from content scripts should have sender.tab set
         if (sender.tab) {
             var tabId = sender.tab.id;
@@ -124,7 +124,7 @@
                 isEngaged().then(engaged => {
                     if (!engaged) {
                         console.log(`Tab ${tabId} injected, Stubber is OFF, sending empty stubs`);
-                        chrome.tabs.sendMessage(tabId, { name: 'stubs', stubs: [] }, function(response) {});
+                        chrome.tabs.sendMessage(tabId, { name: 'stubs', stubs: [] }, function() {});
                     }
                 });
             }

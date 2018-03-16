@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import configureStore from './store/configureStore';
@@ -23,16 +22,13 @@ render(
 );
 
 // load state from local storage
-chrome.storage.local.get('state', items => {
-    const state = items.state || [];
-    console.log('Loaded state', state);
-
-    store.dispatch(importAction(importStubs(store.getState(), state)));
-});
+const storageState = JSON.parse(localStorage.getItem('state') || '[]');
+console.log('Loaded state', storageState);
+store.dispatch(importAction(importStubs(store.getState(), storageState)));
 
 // Create a connection to the background page
 const backgroundPageConnection = chrome.runtime.connect({
-    name: "devtools-page"
+    name: 'devtools-page'
 });
 
 // tell the background page that there's a new panel

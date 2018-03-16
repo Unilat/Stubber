@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -28,7 +27,7 @@ export default class Textbox extends BaseInput {
         };
     }
     
-    onBlur(e) {
+    onBlur() {
         this.setState({ shouldBeValidated: true });
     }
 
@@ -37,7 +36,7 @@ export default class Textbox extends BaseInput {
     }
 
     render() {
-        const { validator, onChange, className, ...props } = this.props;
+        const { className, ...props } = this.props;
         const textboxClass = {
             'textbox': true,
             'textbox--error': this.state.errors.length && this.state.shouldBeValidated

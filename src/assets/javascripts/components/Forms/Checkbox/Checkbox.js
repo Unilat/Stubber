@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import BaseInput from '../BaseInput/BaseInput';
 
@@ -19,7 +18,7 @@ export default class Checkbox extends BaseInput {
         
         this.state = {
             value: false
-        }
+        };
     }
 
     render() {

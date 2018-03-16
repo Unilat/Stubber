@@ -1,6 +1,5 @@
 export default function exportState(state) {
     // reduce the state to a simple folder list, with stubs embedded
-    const exported = [];
     const folders = state.folders;
     const stubs = state.stubs;
 

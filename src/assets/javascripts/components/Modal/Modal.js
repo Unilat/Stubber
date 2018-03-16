@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import './Modal.scss';
 
@@ -56,7 +54,7 @@ export default class Modal extends Component {
             // only render when it's open OR when it's closed but the animation isn't done
             ReactDOM.createPortal(
                 <div className={'backdrop' + (this.props.open ? '' : ' leaving')} onClick={this.close}>
-                    <div className="modal" onClick={(e) => { if (e.target.className !== 'modal') e.stopPropagation() }}>
+                    <div className="modal" onClick={(e) => { if (e.target.className !== 'modal') e.stopPropagation(); }}>
                         <div className="modal__title">
                             <div className="actions modal__actions">
                                 {this.props.actions}

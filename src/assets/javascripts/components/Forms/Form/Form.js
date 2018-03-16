@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Form.scss';
-import Textbox from '../Textbox/Textbox';
 
 export default class Form extends Component {
 
@@ -46,7 +45,7 @@ export default class Form extends Component {
         //console.log(this.model, this.errors);
     }
 
-    registerInput(component, validators) {
+    registerInput(component) {
         let input = this.inputs[component.props.name] = {
             name: component.props.name,
             component,

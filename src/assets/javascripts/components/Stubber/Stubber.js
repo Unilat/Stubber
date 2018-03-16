@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { folderActions, getOrderedFolders } from '../../reducers/folders';
+import { folderActions } from '../../reducers/folders';
 import { stubActions } from '../../reducers/stubs';
 import Folder from '../Folder';
 import Tooltip from '../Tooltip';
@@ -56,7 +56,7 @@ class Stubber extends Component {
     export() {
         let exp = JSON.stringify(exportState(store.getState()), null, 4);
         let a = document.createElement('a');
-        let blob = new Blob([exp], {type: "octet/stream"});
+        let blob = new Blob([exp], {type: 'octet/stream'});
         let url = window.URL.createObjectURL(blob);
         a.setAttribute('href', url);
         a.setAttribute('download', 'stubs.json');
