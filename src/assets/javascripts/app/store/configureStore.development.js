@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { persistState } from 'redux-devtools';
+//import { persistState } from 'redux-devtools';
 import promiseMiddleware from 'redux-promise';
 import { createLogger } from 'redux-logger';
 
@@ -16,15 +16,15 @@ const logger = createLogger();
 const middlewares = [promiseMiddleware, logger, require('redux-immutable-state-invariant').default()];
 
 // By default we try to read the key from ?debug_session=<key> in the address bar
-const getDebugSessionKey = function () {
-  const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
-  return (matches && matches.length) ? matches[1] : null;
-};
+// const getDebugSessionKey = function () {
+//     const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
+//     return (matches && matches.length) ? matches[1] : null;
+// };
 
 const enhancer = compose(
-  applyMiddleware(...middlewares)
+    applyMiddleware(...middlewares)
 );
 
 export default function configureStore(initialState) {
-  return createStore(rootReducer, initialState, enhancer);
+    return createStore(rootReducer, initialState, enhancer);
 }

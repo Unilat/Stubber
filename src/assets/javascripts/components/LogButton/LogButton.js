@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -66,16 +66,18 @@ class LogButton extends Component {
                 
                 <Modal title="Request Log" open={this.state.logOpen} onClose={this.closeLog} actions={this.clearButton}>
                     <table className="log">
-                        {this.props.logs.map(log => (
-                            <tr key={log.id} className={'log-item ' + (log.stubbed ? 'log-item--stubbed':'')} onClick={this.addStub.bind(this, log)}>
-                                <td className="log-item__method">{log.method}</td>
-                                <td className="log-item__url">{shortenURL(log.url)}</td>
-                                <td className="log-item__status">
-                                    <span className={statusClass(log.status)}>{log.status}</span>
-                                    {log.stubbed ? <div class="log-item__stub"></div> : null}
-                                </td>
-                            </tr>
-                        ))}
+                        <tbody>
+                            {this.props.logs.map(log => (
+                                <tr key={log.id} className={'log-item ' + (log.stubbed ? 'log-item--stubbed':'')} onClick={this.addStub.bind(this, log)}>
+                                    <td className="log-item__method">{log.method}</td>
+                                    <td className="log-item__url">{shortenURL(log.url)}</td>
+                                    <td className="log-item__status">
+                                        <span className={statusClass(log.status)}>{log.status}</span>
+                                        {log.stubbed ? <div className="log-item__stub"></div> : null}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </Modal>
 

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,7 +18,8 @@ import './Stubber.scss';
 class Stubber extends Component {
 
     static propTypes = {
-        actions: PropTypes.object.isRequired
+        actions: PropTypes.object.isRequired,
+        folders: PropTypes.array.isRequired
     };
 
     constructor(props) {
@@ -80,7 +81,7 @@ class Stubber extends Component {
                 </header>
                 <div className={'folder-list ' + (folders.length === 0 ? 'folder-list--empty' : '')}>
                     {folders.length === 0 ?
-                        <p>You ain't got no stubs, Lieutenant Dan!</p> :
+                        <p>You ain&apos;t got no stubs, Lieutenant Dan!</p> :
                         folders.map(id => (
                             <Folder key={id} id={id} />
                         ))

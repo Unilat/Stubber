@@ -4,9 +4,9 @@ import promiseMiddleware from 'redux-promise';
 import rootReducer from '../reducer';
 
 const enhancer = compose(
-  applyMiddleware(promiseMiddleware)
+    applyMiddleware(promiseMiddleware)
 )(createStore);
 
 export default function configureStore(initialState) {
-  return enhancer(rootReducer, initialState);
+    return enhancer(rootReducer, initialState);
 }

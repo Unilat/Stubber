@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,8 @@ export default class Modal extends Component {
         title: PropTypes.string.isRequired,
         open: PropTypes.bool,
         onClose: PropTypes.func,
-        actions: PropTypes.any // React element or elements array
+        actions: PropTypes.node,
+        children: PropTypes.node
     };
 
     constructor(props) {

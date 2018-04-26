@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Form.scss';
@@ -7,7 +7,9 @@ export default class Form extends Component {
 
     static propTypes = {
         onValidate: PropTypes.func,
-        onError: PropTypes.func
+        onError: PropTypes.func,
+        className: PropTypes.string,
+        children: PropTypes.node
     };
 
     static childContextTypes = {

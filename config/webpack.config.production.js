@@ -27,7 +27,7 @@ module.exports = merge(config, {
                 ignore: ['scripts/**/*']
             }, {
                 from: path.join(__dirname, '../src/assets/extension/scripts/*.js'),
-                to: '',
+                to: 'scripts/',
                 flatten: true,
                 transform: (content) => {
                     return UglifyJS.minify(babel.transform(content).code).code;

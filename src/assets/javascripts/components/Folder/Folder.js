@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -20,7 +20,8 @@ class Folder extends Component {
         folder: PropTypes.object.isRequired,
         editing: PropTypes.bool.isRequired,
         actions: PropTypes.object.isRequired,
-        disabled: PropTypes.bool.isRequired
+        disabled: PropTypes.bool.isRequired,
+        id: PropTypes.number.isRequired
     };
 
     constructor(props) {

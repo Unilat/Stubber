@@ -13,14 +13,14 @@
     ],
 
     "content_scripts": [{
-        "js":        [ "content.js" ],
+        "js":        [ "scripts/content.js" ],
         "matches":   [ "<all_urls>" ],
         "run_at":    "document_start"
     }],
 
     "background": {
         "scripts": [
-            "background.js"
+            "scripts/background.js"
         ]
     },
 

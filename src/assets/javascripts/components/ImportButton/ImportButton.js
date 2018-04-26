@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -12,7 +12,8 @@ class ImportButton extends Component {
 
     static propTypes = {
         state: PropTypes.object.isRequired,
-        importAction: PropTypes.func.isRequired
+        importAction: PropTypes.func.isRequired,
+        children: PropTypes.node
     };
 
     constructor(props) {

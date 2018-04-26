@@ -27,7 +27,7 @@
     "start": "cross-env NODE_ENV=development webpack --watch --config ./config/webpack.config.development.js --progress",
     "prebuild": "npm run clean:build",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
-    "lint": "eslint config src/js/** --ext .js",
+    "lint": "eslint config src/** --ext .js",
     "jscs": "jscs src/js/",
     "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --require ./test/unit/testHelper.js --recursive ./test/unit",
     "test:watch": "npm run test -- --watch",

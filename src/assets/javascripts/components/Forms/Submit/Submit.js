@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './Submit.scss';
@@ -6,7 +6,7 @@ import './Submit.scss';
 export default class Submit extends Component {
 
     static propTypes = {
-        
+        children: PropTypes.node
     };
 
     static contextTypes = {

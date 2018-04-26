@@ -1,6 +1,15 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class BaseInput extends Component {
+
+    static propTypes = {
+        default: PropTypes.any,
+        validator: PropTypes.func,
+        required: PropTypes.bool,
+        name: PropTypes.string
+    };
+
     constructor(props, context) {
         super(props);
 

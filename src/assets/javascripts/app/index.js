@@ -1,3 +1,4 @@
+import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import configureStore from './store/configureStore';
@@ -22,9 +23,11 @@ render(
 );
 
 // load state from local storage
-const storageState = JSON.parse(localStorage.getItem('state') || '[]');
-console.log('Loaded state', storageState);
-store.dispatch(importAction(importStubs(store.getState(), storageState)));
+//const storageState = JSON.parse(localStorage.getItem('state') || '[]');
+chrome.storage.local.get('state', ({ state }) => {
+    console.log('Loaded state', state);
+    store.dispatch(importAction(importStubs(store.getState(), state)));
+});
 
 // Create a connection to the background page
 const backgroundPageConnection = chrome.runtime.connect({
