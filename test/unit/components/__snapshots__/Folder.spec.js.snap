@@ -1,0 +1,938 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Folder renders 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Folder
+    actions={Object {}}
+    disabled={false}
+    editing={false}
+    folder={
+      Object {
+        "id": 0,
+        "name": "Test Folder",
+        "open": true,
+        "stubs": Array [],
+      }
+    }
+    id={0}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="folder__placeholder"
+        >
+          <div
+            className="folder__header"
+            onClick={[Function]}
+          >
+            <div
+              className="folder__handle"
+              onMouseDown={[Function]}
+            />
+            <div
+              className="folder__header-wrap"
+              onClick={[Function]}
+            >
+              <input
+                className="folder__name"
+                defaultValue="Test Folder"
+                disabled={true}
+                onBlur={[Function]}
+                onKeyPress={[Function]}
+                type="text"
+              />
+            </div>
+            <div
+              className="actions"
+              onClick={[Function]}
+            >
+              <button
+                className="edit"
+                onClick={[Function]}
+              >
+                <Tooltip
+                  text="Edit"
+                />
+              </button>
+              <button
+                className="add-stub"
+                onClick={[Function]}
+              >
+                <Tooltip
+                  text="Add Stub"
+                />
+              </button>
+              <RemoveButton
+                onRemove={[Function]}
+                tooltip="Remove"
+              />
+              <button
+                className="disable"
+                onClick={[Function]}
+              >
+                <Tooltip
+                  text="Disable"
+                />
+              </button>
+            </div>
+          </div>
+        </div>,
+        <div
+          className="folder__stubs"
+        >
+          <div
+            className="folder__stub-list"
+          />
+        </div>,
+        <Modal
+          onClose={[Function]}
+          open={false}
+          title="Add Stub"
+        >
+          <Connect(StubForm)
+            closeModal={[Function]}
+            folderID={0}
+          />
+        </Modal>,
+      ],
+      "className": "folder folder--open",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="folder__header"
+            onClick={[Function]}
+          >
+            <div
+              className="folder__handle"
+              onMouseDown={[Function]}
+            />
+            <div
+              className="folder__header-wrap"
+              onClick={[Function]}
+            >
+              <input
+                className="folder__name"
+                defaultValue="Test Folder"
+                disabled={true}
+                onBlur={[Function]}
+                onKeyPress={[Function]}
+                type="text"
+              />
+            </div>
+            <div
+              className="actions"
+              onClick={[Function]}
+            >
+              <button
+                className="edit"
+                onClick={[Function]}
+              >
+                <Tooltip
+                  text="Edit"
+                />
+              </button>
+              <button
+                className="add-stub"
+                onClick={[Function]}
+              >
+                <Tooltip
+                  text="Add Stub"
+                />
+              </button>
+              <RemoveButton
+                onRemove={[Function]}
+                tooltip="Remove"
+              />
+              <button
+                className="disable"
+                onClick={[Function]}
+              >
+                <Tooltip
+                  text="Disable"
+                />
+              </button>
+            </div>
+          </div>,
+          "className": "folder__placeholder",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="folder__handle"
+                onMouseDown={[Function]}
+              />,
+              <div
+                className="folder__header-wrap"
+                onClick={[Function]}
+              >
+                <input
+                  className="folder__name"
+                  defaultValue="Test Folder"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onKeyPress={[Function]}
+                  type="text"
+                />
+              </div>,
+              <div
+                className="actions"
+                onClick={[Function]}
+              >
+                <button
+                  className="edit"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Edit"
+                  />
+                </button>
+                <button
+                  className="add-stub"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Add Stub"
+                  />
+                </button>
+                <RemoveButton
+                  onRemove={[Function]}
+                  tooltip="Remove"
+                />
+                <button
+                  className="disable"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Disable"
+                  />
+                </button>
+              </div>,
+            ],
+            "className": "folder__header",
+            "onClick": [Function],
+          },
+          "ref": [Function],
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "folder__handle",
+                "onMouseDown": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <input
+                  className="folder__name"
+                  defaultValue="Test Folder"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onKeyPress={[Function]}
+                  type="text"
+                />,
+                "className": "folder__header-wrap",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "folder__name",
+                  "defaultValue": "Test Folder",
+                  "disabled": true,
+                  "onBlur": [Function],
+                  "onKeyPress": [Function],
+                  "type": "text",
+                },
+                "ref": [Function],
+                "rendered": null,
+                "type": "input",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <button
+                    className="edit"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      text="Edit"
+                    />
+                  </button>,
+                  <button
+                    className="add-stub"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      text="Add Stub"
+                    />
+                  </button>,
+                  <RemoveButton
+                    onRemove={[Function]}
+                    tooltip="Remove"
+                  />,
+                  <button
+                    className="disable"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      text="Disable"
+                    />
+                  </button>,
+                ],
+                "className": "actions",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Tooltip
+                      text="Edit"
+                    />,
+                    "className": "edit",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "text": "Edit",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Tooltip
+                      text="Add Stub"
+                    />,
+                    "className": "add-stub",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "text": "Add Stub",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "onRemove": [Function],
+                    "tooltip": "Remove",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Tooltip
+                      text="Disable"
+                    />,
+                    "className": "disable",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "text": "Disable",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="folder__stub-list"
+          />,
+          "className": "folder__stubs",
+        },
+        "ref": [Function],
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [],
+            "className": "folder__stub-list",
+          },
+          "ref": [Function],
+          "rendered": Array [],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Connect(StubForm)
+            closeModal={[Function]}
+            folderID={0}
+          />,
+          "onClose": [Function],
+          "open": false,
+          "title": "Add Stub",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "closeModal": [Function],
+            "folderID": 0,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="folder__placeholder"
+          >
+            <div
+              className="folder__header"
+              onClick={[Function]}
+            >
+              <div
+                className="folder__handle"
+                onMouseDown={[Function]}
+              />
+              <div
+                className="folder__header-wrap"
+                onClick={[Function]}
+              >
+                <input
+                  className="folder__name"
+                  defaultValue="Test Folder"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onKeyPress={[Function]}
+                  type="text"
+                />
+              </div>
+              <div
+                className="actions"
+                onClick={[Function]}
+              >
+                <button
+                  className="edit"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Edit"
+                  />
+                </button>
+                <button
+                  className="add-stub"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Add Stub"
+                  />
+                </button>
+                <RemoveButton
+                  onRemove={[Function]}
+                  tooltip="Remove"
+                />
+                <button
+                  className="disable"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Disable"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>,
+          <div
+            className="folder__stubs"
+          >
+            <div
+              className="folder__stub-list"
+            />
+          </div>,
+          <Modal
+            onClose={[Function]}
+            open={false}
+            title="Add Stub"
+          >
+            <Connect(StubForm)
+              closeModal={[Function]}
+              folderID={0}
+            />
+          </Modal>,
+        ],
+        "className": "folder folder--open",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="folder__header"
+              onClick={[Function]}
+            >
+              <div
+                className="folder__handle"
+                onMouseDown={[Function]}
+              />
+              <div
+                className="folder__header-wrap"
+                onClick={[Function]}
+              >
+                <input
+                  className="folder__name"
+                  defaultValue="Test Folder"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onKeyPress={[Function]}
+                  type="text"
+                />
+              </div>
+              <div
+                className="actions"
+                onClick={[Function]}
+              >
+                <button
+                  className="edit"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Edit"
+                  />
+                </button>
+                <button
+                  className="add-stub"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Add Stub"
+                  />
+                </button>
+                <RemoveButton
+                  onRemove={[Function]}
+                  tooltip="Remove"
+                />
+                <button
+                  className="disable"
+                  onClick={[Function]}
+                >
+                  <Tooltip
+                    text="Disable"
+                  />
+                </button>
+              </div>
+            </div>,
+            "className": "folder__placeholder",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="folder__handle"
+                  onMouseDown={[Function]}
+                />,
+                <div
+                  className="folder__header-wrap"
+                  onClick={[Function]}
+                >
+                  <input
+                    className="folder__name"
+                    defaultValue="Test Folder"
+                    disabled={true}
+                    onBlur={[Function]}
+                    onKeyPress={[Function]}
+                    type="text"
+                  />
+                </div>,
+                <div
+                  className="actions"
+                  onClick={[Function]}
+                >
+                  <button
+                    className="edit"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      text="Edit"
+                    />
+                  </button>
+                  <button
+                    className="add-stub"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      text="Add Stub"
+                    />
+                  </button>
+                  <RemoveButton
+                    onRemove={[Function]}
+                    tooltip="Remove"
+                  />
+                  <button
+                    className="disable"
+                    onClick={[Function]}
+                  >
+                    <Tooltip
+                      text="Disable"
+                    />
+                  </button>
+                </div>,
+              ],
+              "className": "folder__header",
+              "onClick": [Function],
+            },
+            "ref": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "folder__handle",
+                  "onMouseDown": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <input
+                    className="folder__name"
+                    defaultValue="Test Folder"
+                    disabled={true}
+                    onBlur={[Function]}
+                    onKeyPress={[Function]}
+                    type="text"
+                  />,
+                  "className": "folder__header-wrap",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "folder__name",
+                    "defaultValue": "Test Folder",
+                    "disabled": true,
+                    "onBlur": [Function],
+                    "onKeyPress": [Function],
+                    "type": "text",
+                  },
+                  "ref": [Function],
+                  "rendered": null,
+                  "type": "input",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <button
+                      className="edit"
+                      onClick={[Function]}
+                    >
+                      <Tooltip
+                        text="Edit"
+                      />
+                    </button>,
+                    <button
+                      className="add-stub"
+                      onClick={[Function]}
+                    >
+                      <Tooltip
+                        text="Add Stub"
+                      />
+                    </button>,
+                    <RemoveButton
+                      onRemove={[Function]}
+                      tooltip="Remove"
+                    />,
+                    <button
+                      className="disable"
+                      onClick={[Function]}
+                    >
+                      <Tooltip
+                        text="Disable"
+                      />
+                    </button>,
+                  ],
+                  "className": "actions",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Tooltip
+                        text="Edit"
+                      />,
+                      "className": "edit",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "text": "Edit",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Tooltip
+                        text="Add Stub"
+                      />,
+                      "className": "add-stub",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "text": "Add Stub",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "button",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "onRemove": [Function],
+                      "tooltip": "Remove",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Tooltip
+                        text="Disable"
+                      />,
+                      "className": "disable",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "text": "Disable",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="folder__stub-list"
+            />,
+            "className": "folder__stubs",
+          },
+          "ref": [Function],
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [],
+              "className": "folder__stub-list",
+            },
+            "ref": [Function],
+            "rendered": Array [],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Connect(StubForm)
+              closeModal={[Function]}
+              folderID={0}
+            />,
+            "onClose": [Function],
+            "open": false,
+            "title": "Add Stub",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "closeModal": [Function],
+              "folderID": 0,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -25,7 +25,6 @@ export default class Tooltip extends PureComponent {
 
     adjust() {
         if (this.elem) {
-            console.log('there');
             const half = Math.floor(this.elem.getBoundingClientRect().width / 2);
             this.elem.style.transform = `translate3d(-${half}px, 0, 0)`;
             this.elem.style.width = (half * 2) + 'px';

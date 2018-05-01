@@ -29,14 +29,28 @@
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
     "lint": "eslint config src/** --ext .js",
     "jscs": "jscs src/js/",
-    "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --require ./test/unit/testHelper.js --recursive ./test/unit",
+    "test": "jest",
     "test:watch": "npm run test -- --watch",
     "tunnel": "lt --port 3000"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/test/unit/setup.js",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules", "<rootDir>/src/assets/javascripts"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "<rootDir>/test/mocks/styleMock.js"
+    }
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.1",
+    "babel-jest": "^22.4.3",
     "babel-loader": "7.1.2",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
     "babel-plugin-transform-flow-strip-types": "6.22.0",
@@ -55,6 +69,8 @@
     "cross-env": "5.1.3",
     "crx-webpack-plugin": "^0.1.5",
     "css-loader": "^0.28.9",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "4.16.0",
     "eslint-plugin-flowtype": "2.41.1",
     "eslint-plugin-react": "^7.7.0",
@@ -62,6 +78,7 @@
     "file-loader": "1.1.6",
     "flow-bin": "0.64.0",
     "http-server": "0.11.1",
+    "jest": "^22.4.3",
     "jquery": "3.3.1",
     "jscs": "3.0.7",
     "jsdom": "11.6.0",
@@ -70,12 +87,14 @@
     "postcss-icss-values": "2.0.1",
     "postcss-loader": "2.0.10",
     "react-addons-test-utils": "15.6.2",
+    "react-test-renderer": "^16.3.2",
     "redbox-react": "1.5.0",
     "redux-devtools": "3.4.1",
     "redux-devtools-dock-monitor": "1.1.3",
     "redux-devtools-log-monitor": "1.4.0",
     "redux-immutable-state-invariant": "2.1.0",
     "redux-slider-monitor": "2.0.0-1",
+    "regenerator-runtime": "^0.11.1",
     "rimraf": "2.6.2",
     "sass-loader": "6.0.6",
     "style-loader": "0.19.1",

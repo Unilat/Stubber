@@ -14,7 +14,7 @@ import StubForm from '../StubForm';
 
 import './Folder.scss';
 
-class Folder extends Component {
+export class Folder extends Component {
 
     static propTypes = {
         folder: PropTypes.object.isRequired,
