@@ -1,5 +1,5 @@
 {
-  "name": "Stubber",
+  "name": "stubber",
   "description": "Chrome extension for stubbing endpoints in-browser",
   "version": "1.0.0",
   "author": "Calvin Goodman <goodmc4@nationwide.com>",
