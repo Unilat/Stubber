@@ -159,8 +159,10 @@ export default function folders(state = { byID: [], byHash: {}, editing: null },
         }
 
         case IMPORT: {
-            // set the ID to the number of folders
-            folderID = action.state.folders.byID.length;
+            // imported folders get new IDs starting at the max ID of folders we already have
+            // so when importing is done we want folderID to be after those
+            // this assumes all imported folders are new and not merged
+            folderID += action.state.folders.byID.length;
         }
 
         default:
