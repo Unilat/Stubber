@@ -65,8 +65,8 @@ export default function stubs(state = {}, action = {}) {
         }
 
         case IMPORT: {
-            // set the ID to the number of stubs
-            stubID = Object.keys(action.state.stubs).length;
+            // offset ID counter by the max of how many could have been added
+            stubID += Object.keys(action.state.stubs).length;
         }
 
         default:

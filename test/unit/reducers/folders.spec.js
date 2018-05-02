@@ -39,8 +39,8 @@ describe('Folders reducer', () => {
 
     test('can add a folder', () => {
         const newState = reducer(state, folderActions.addFolder({ name: 'Folder 1' }));
-        expect(newState.byID.length).toBe(1);
-        expect(Object.keys(newState.byHash).length).toBe(1);
+        expect(newState.byID).toHaveLength(1);
+        expect(Object.keys(newState.byHash)).toHaveLength(1);
         expect(newState.byID[0]).toBe(0);
         expect(newState.byHash[0].name).toBe('Folder 1');
         expect(newState.byHash[0].id).toBe(0);
@@ -53,10 +53,10 @@ describe('Folders reducer', () => {
 
     test('can remove a folder', () => {
         const newState = reducer(fullState, folderActions.removeFolder({ id: 101 }));
-        expect(newState.byID.length).toBe(2);
-        expect(Object.keys(newState.byHash).length).toBe(2);
+        expect(newState.byID).toHaveLength(2);
+        expect(Object.keys(newState.byHash)).toHaveLength(2);
         expect(newState.byHash[101]).toBeUndefined;
-        expect(newState.byID.includes(101)).toBe(false);
+        expect(newState.byID).not.toContain(101);
     });
 
     test('can edit a folder', () => {
@@ -75,19 +75,19 @@ describe('Folders reducer', () => {
 
     test('can add a stub', () => {
         const newState = reducer(fullState, addStub(101, { name: 'New Stub', id: 0 }));
-        expect(newState.byHash[101].stubs.length).toBe(1);
+        expect(newState.byHash[101].stubs).toHaveLength(1);
         expect(newState.byHash[101].stubs[0]).toBe(0);
     });
 
     test('can remove a stub', () => {
         const newState = reducer(fullState, removeStub({ id: 1 }));
-        expect(newState.byHash[102].stubs.length).toBe(2);
-        expect(newState.byHash[102].stubs.includes(1)).toBe(false);
+        expect(newState.byHash[102].stubs).toHaveLength(2);
+        expect(newState.byHash[102].stubs).not.toContain(1);
     });
 
     test('can move a stub within folder', () => {
         const newState = reducer(fullState, folderActions.moveStub(102, 102, { id: 0 }, 2));
-        expect(newState.byHash[102].stubs.length).toBe(3);
+        expect(newState.byHash[102].stubs).toHaveLength(3);
         expect(newState.byHash[102].stubs[1]).toBe(0);
     });
 
@@ -105,14 +105,14 @@ describe('Folders reducer', () => {
         const newState = reducer(fullState, folderActions.moveStub(100, 102, { id: 3 }, 1));
         expect(newState.byHash[102].stubs.length).toBe(4);
         expect(newState.byHash[100].stubs.length).toBe(1);
-        expect(newState.byHash[102].stubs.includes(3)).toBe(true);
-        expect(newState.byHash[100].stubs.includes(3)).toBe(false);
+        expect(newState.byHash[102].stubs).toContain(3);
+        expect(newState.byHash[100].stubs).not.toContain(3);
         expect(newState.byHash[102].stubs[1]).toBe(3);
     });
 
     test('can move a folder', () => {
         const newState = reducer(fullState, folderActions.moveFolder(100, 3));
-        expect(newState.byID.length).toBe(3);
+        expect(newState.byID).toHaveLength(3);
         expect(newState.byID[0]).toBe(101);
         expect(newState.byID[2]).toBe(100);
     });

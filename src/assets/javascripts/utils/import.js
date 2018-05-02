@@ -64,6 +64,6 @@ export default function importStubs(state, json) {
         }
     }
 
-    console.log(newState);
+    //console.log(newState);
     return newState;
 }
