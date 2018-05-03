@@ -42,14 +42,14 @@ export default function logs(state = initialState, action = {}) {
     }
 }
 
-export const addRequest = (folder) => ({
+export const addRequest = (request) => ({
     type: REQUEST,
-    folder
+    request
 });
 
-export const addResponse = (folder) => ({
+export const addResponse = (response) => ({
     type: RESPONSE,
-    folder
+    response
 });
 
 export const clearLog = () => ({

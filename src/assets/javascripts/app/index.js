@@ -4,9 +4,9 @@ import App from './App';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
 import exportState from '../utils/export';
-import { REQUEST, RESPONSE } from '../reducers/logs';
 import { importAction } from '../app/reducer';
 import importStubs from '../utils/import';
+import { logActions } from '../reducers/logs';
 
 import 'styles/styles.scss';
 
@@ -46,17 +46,11 @@ backgroundPageConnection.onMessage.addListener(function (message) {
     switch (message.name) {
         // the inspected page is making a request
         case 'request':
-            store.dispatch({
-                type: REQUEST,
-                request: message.request
-            });
+            logActions.addRequest(message.request);
             break;
         // the inspected page got a response
         case 'response':
-            store.dispatch({
-                type: RESPONSE,
-                response: message.response
-            });
+            logActions.addResponse(message.response);
             break;
         // the inspected page got the context script injected
         case 'injectComplete':
