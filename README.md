@@ -28,7 +28,7 @@ There are two ways in which you can build and run the web app:
 
 **(TBD)**
 
-Ain't got no tests yet, but:
+Tests are incomplete in develop branch:
 
 ```sh
 $ npm run test
