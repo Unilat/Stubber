@@ -1,4 +1,4 @@
-(function(window) {
+(function() {
 
     // listen for messages from background.js and relay them to the context script
     chrome.extension.onMessage.addListener(function(message) {
@@ -270,4 +270,4 @@
     (document.head || document.documentElement).appendChild(script);
     script.remove();
 
-})(window);
+})();
