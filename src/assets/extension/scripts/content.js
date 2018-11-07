@@ -177,7 +177,7 @@
                     source: 'stubber.inject',
                     response: {
                         id,
-                        body: this.responseStub.response,
+                        response: this.responseStub.response,
                         headers: this.responseStub.headers,
                         status: this.responseStub.status,
                         stubbed: true
@@ -191,7 +191,7 @@
                         source: 'stubber.inject',
                         response: {
                             id,
-                            body: e.target.response,
+                            response: e.target.response,
                             headers: e.target.getAllResponseHeaders(),
                             status: e.target.status
                         }

@@ -46,11 +46,11 @@ backgroundPageConnection.onMessage.addListener(function (message) {
     switch (message.name) {
         // the inspected page is making a request
         case 'request':
-            logActions.addRequest(message.request);
+            store.dispatch(logActions.addRequest(message.request));
             break;
         // the inspected page got a response
         case 'response':
-            logActions.addResponse(message.response);
+            store.dispatch(logActions.addResponse(message.response));
             break;
         // the inspected page got the context script injected
         case 'injectComplete':
