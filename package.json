@@ -40,7 +40,8 @@
       "jsx"
     ],
     "moduleDirectories": [
-      "node_modules", "<rootDir>/src/assets/javascripts"
+      "node_modules",
+      "<rootDir>/src/assets/javascripts"
     ],
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "<rootDir>/test/mocks/styleMock.js"

@@ -44,6 +44,7 @@
     },
     "globals": {
         "chrome": false,
-        "require": false
+        "require": false,
+        "global": false
     }
 }

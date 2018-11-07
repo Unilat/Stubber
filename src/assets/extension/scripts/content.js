@@ -1,4 +1,4 @@
-(function() {
+(function(window) {
 
     // listen for messages from background.js and relay them to the context script
     chrome.extension.onMessage.addListener(function(message) {
@@ -49,7 +49,6 @@
             message.source !== 'stubber.inject') {
             return;
         }
-
         // message is sent when injection code has executed, and we can send it the stubs list
         if (message.name === 'injectComplete') {
             chrome.storage.local.get('stubs', items => {
@@ -271,4 +270,4 @@
     (document.head || document.documentElement).appendChild(script);
     script.remove();
 
-})();
+})(window);
